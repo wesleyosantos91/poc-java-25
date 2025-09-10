@@ -12,10 +12,7 @@ A ideia é revisar recursos que surgiram nas versões recentes e experimentar, n
 - `sequencedcollections/` → **Sequenced Collections** (Java 21+) - Coleções com ordem garantida.
 - `unnamedvariablepatterns/` → **Unnamed Variables & Patterns** (Java 22+) - Variáveis não nomeadas.
 - `javadocmarkdown/` → **Markdown Documentation Comments** (Java 23+) - Javadoc com sintaxe Markdown.
-- (em breve) `records/` → Exemplos com **Records**.
-- (em breve) `pattern-matching/` → Exemplos de **Pattern Matching**.
-- (em breve) `string-templates/` → Templates de String (Preview).
-- (em breve) `scoped-values/` → Scoped Values (substituindo ThreadLocal).
+- `scopedvalue/` → **Scoped Values** (Java 25+) - Passagem implícita de contexto.
 
 Cada diretório contém exemplos isolados e um README explicando o recurso.
 
@@ -77,6 +74,7 @@ Entre no diretório do projeto e execute:
 mvn exec:java -Dexec.mainClass="io.github.wesleyosantos91.unnamedvariablepatterns.Main"
 ```
 
+**Unnamed Variables & Patterns** (Java 22+) introduzem o uso do underscore `_` para representar variáveis que não serão utilizadas, tornando o código mais limpo e expressivo. O código demonstra uso em lambdas (`nomes.forEach(_ -> ...)`), exception handling (`catch (IOException _)`), pattern matching (`if (obj instanceof Point(int x, _))`) e switch expressions (`case Triangle(_, _, angle)`). Esta funcionalidade elimina warnings do compilador sobre variáveis não utilizadas e comunica claramente a intenção do desenvolvedor.
 
 ---
 
@@ -90,3 +88,16 @@ javadoc -d docs src/main/java/io/github/wesleyosantos91/javadocmarkdown/*.java
 ```
 
 **Markdown Documentation Comments** (Java 23+) introduzem sintaxe Markdown nativa em comentários Javadoc através do JEP 467. A classe `Calculadora` demonstra a nova sintaxe `///` com cabeçalhos, formatação, listas, blocos de código e integração com tags tradicionais do Javadoc. Esta funcionalidade torna a documentação mais legível no código-fonte e mais rica visualmente quando gerada.
+
+---
+
+## 🔐 Executando Scoped Values
+
+Entre no diretório do projeto e execute:
+
+```bash
+# Executa a demonstração de Scoped Values
+mvn exec:java -Dexec.mainClass="io.github.wesleyosantos91.scopedvalue.Main"
+```
+
+**Scoped Values** (Java 20+) oferecem uma alternativa moderna e eficiente ao ThreadLocal para passagem implícita de contexto através do call stack. O código demonstra como criar uma chave de contexto (`USER`), vincular valores ao escopo usando `ScopedValue.where(USER, "Wesley").run()`, e acessar esses valores em qualquer ponto do call stack com `USER.get()`. A implementação mostra verificação de binding com `isBound()` e uso de fallback com `orElse()`.
