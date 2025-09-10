@@ -1,10 +1,20 @@
 package io.github.wesleyosantos91.sequencedcollections;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
+import java.util.LinkedList;
+import java.util.Map;
+import java.util.SequencedCollection;
+import java.util.SequencedMap;
+import java.util.SequencedSet;
+import java.util.TreeMap;
+import java.util.TreeSet;
 
 public class Main {
 
     static void main() {
+
         System.out.println("📋 Demonstração de Sequenced Collections no Java 21+");
         System.out.println("═".repeat(60));
         System.out.println();
