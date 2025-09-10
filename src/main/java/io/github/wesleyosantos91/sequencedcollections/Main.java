@@ -3,7 +3,8 @@ package io.github.wesleyosantos91.sequencedcollections;
 import java.util.*;
 
 public class Main {
-    public static void main(String[] args) {
+
+    static void main() {
         System.out.println("📋 Demonstração de Sequenced Collections no Java 21+");
         System.out.println("═".repeat(60));
         System.out.println();

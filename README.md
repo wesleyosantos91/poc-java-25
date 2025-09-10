@@ -67,3 +67,4 @@ mvn exec:java -Dexec.mainClass="io.github.wesleyosantos91.sequencedcollections.M
 ```
 
 O exemplo demonstra as **Sequenced Collections** (Java 21+), que introduzem uma API consistente para coleções que mantêm ordem de inserção. O código mostra as novas interfaces `SequencedCollection`, `SequencedSet` e `SequencedMap` com métodos como `addFirst()`, `addLast()`, `getFirst()`, `getLast()` e `reversed()`. Essa funcionalidade simplifica o trabalho com `ArrayList`, `LinkedList`, `TreeSet`, `LinkedHashMap` e outras coleções ordenadas, oferecendo uma interface uniforme sem necessidade de casting.
+
